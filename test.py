@@ -1,6 +1,6 @@
 import streamlit as st import numpy as np import matplotlib.pyplot as plt from pathlib import Path
 
-st.set_page_config( page_title="Equação do 1o Grau", page_icon=" ", 📈 layout="centered" )
+st.set_page_config( page_title="Equação do 1o Grau", page_icon=" ", layout="centered" )
 
 PASTA_APP = Path(file).parent
 
