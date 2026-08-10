@@ -95,7 +95,6 @@ if st.session_state.calculado:
     # Marca a raiz (ponto vermelho)
     ax.scatter(
         [x_raiz],
-,
         color="red",
         s=100,
         zorder=5,
