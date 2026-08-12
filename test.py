@@ -68,12 +68,7 @@ if st.session_state.calculado:
     ax.axhline(y=0, color="black", linewidth=1, linestyle="--")
     ax.axvline(x=0, color="black", linewidth=1, linestyle="--")
 
-    ax.scatter(
-        [x_raiz],
-        color="red", s=100,
-        zorder=5,
-        label=f"Raiz x = {x_raiz:.2f}"
-    )
+    ax.scatter(x_raiz, color="red", s=100, zorder=5, label=f"Raiz x = {x_raiz:.2f}")
 
     ax.set_xlabel("Eixo X")
     ax.set_ylabel("Eixo Y")
