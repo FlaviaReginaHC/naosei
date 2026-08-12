@@ -57,7 +57,6 @@ if st.session_state.calculado:
     st.latex(f"x = \\frac{{{-b}}}{{{a}}}")
     st.latex(f"x = {x_raiz:.2f}")
 
-      
     st.subheader("Gráfico da função")
 
     x = np.linspace(x_raiz - 10, x_raiz + 10, 500)
@@ -73,7 +72,7 @@ if st.session_state.calculado:
         [x_raiz],
         color="red", s=100,
         zorder=5,
-        label= f"Raiz x = {x_raiz:.2f}"
+        label=f"Raiz x = {x_raiz:.2f}"
     )
 
     ax.set_xlabel("Eixo X")
