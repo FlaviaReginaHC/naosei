@@ -73,7 +73,7 @@ if st.session_state.calculado:
         [x_raiz],
         color="red", s=100,
         zorder=5,
-        label=f"Raiz x = {x_raiz:.2f}";
+        label=f"Raiz x = {x_raiz:.2f}"
     )
 
     ax.set_xlabel("Eixo X")
