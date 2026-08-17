@@ -76,8 +76,8 @@ if st.session_state.calculado:
     ax.grid(True, linestyle=":", alpha=0.6)
     ax.legend()
 
-    st.pyplot(fig)
-    plt.close(fig)
+st.pyplot(fig)
+plt.close(fig)
 
 st.divider()
 st.caption("Calculadora de Equação do 1º Grau")
