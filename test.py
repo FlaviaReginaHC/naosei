@@ -24,18 +24,18 @@ st.markdown("""
 
     /* Título */
     h1 {
-        color: #FaFaFa;
+        color: #6C3483;
         text-align: center;
     }
 
     /* Subtítulos */
     h2, h3 {
-        color: #FFFFFF;
+        color: #6C3483;
     }
 
     /* Texto */
     p, label {
-        color: #FFFFFF;
+        color: #6C3483;
     }
 
     /* Botão */
