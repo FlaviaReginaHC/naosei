@@ -3,6 +3,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 
+[theme]
+base = "light"
+background = "#f58e62"
+textColor = "fafafa"
+
 st.set_page_config(
     page_title="Equação do 1º Grau", page_icon="📈", layout="centered")
 
