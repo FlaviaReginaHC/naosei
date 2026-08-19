@@ -12,44 +12,46 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    /* Fundo principal */
+    /* Fundo principal (Salmão claro e suave) */
     .stApp {
-        background-color: #fab89d;
+        background-color: #fce3db;
     }
 
-    /* Área principal */
+    /* Área principal (Branco suave com toque salmão) */
     .main {
-        background-color: #ffd6e7;
+        background-color: #fffaf8;
     }
 
-    /* Título */
+    /* Título (Salmão escuro / Coral fechado) */
     h1 {
-        color: #c2185b;
+        color: #c44d32;
         text-align: center;
     }
 
-    /* Subtítulos */
+    /* Subtítulos (Salmão médio escuro) */
     h2, h3 {
-        color: #ad1457;
+        color: #d15f47;
     }
 
-    /* Texto */
+    /* Texto (Marrom escuro quente para contraste) */
     p, label {
-        color: #4a1630;
+        color: #3b1e18;
     }
 
-    /* Botão */
+    /* Botão (Salmão vibrante / Terracota) */
     .stButton > button {
-        background-color: #9c340b;
+        background-color: #e0674c;
         color: white;
         border: none;
         border-radius: 10px;
         font-size: 18px;
         font-weight: bold;
+        transition: background-color 0.3s ease;
     }
 
+    /* Efeito Hover do botão (Tom mais escuro) */
     .stButton > button:hover {
-        background-color: #782707;
+        background-color: #b84c34;
         color: white;
     }
 
