@@ -24,7 +24,7 @@ st.markdown("""
 
     /* Título */
     h1 {
-        color: #FFFFFF;
+        color: #FaFaFa;
         text-align: center;
     }
 
