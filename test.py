@@ -4,23 +4,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 
-# ============================================
-# CONFIGURAÇÃO DA PÁGINA
-# ============================================
 st.set_page_config(
     page_title="Equação do 1º Grau",
     page_icon="📈",
     layout="centered"
 )
 
-# ============================================
-# FUNDO ROSA E ESTILO
-# ============================================
 st.markdown("""
 <style>
     /* Fundo principal */
     .stApp {
-        background-color: #ffd6e7;
+        background-color: #fab89d;
     }
 
     /* Área principal */
@@ -46,7 +40,7 @@ st.markdown("""
 
     /* Botão */
     .stButton > button {
-        background-color: #e91e63;
+        background-color: #9c340b;
         color: white;
         border: none;
         border-radius: 10px;
@@ -55,7 +49,7 @@ st.markdown("""
     }
 
     .stButton > button:hover {
-        background-color: #c2185b;
+        background-color: #782707;
         color: white;
     }
 
@@ -66,17 +60,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ============================================
-# CONTROLE DO CÁLCULO
-# ============================================
 if "calculado" not in st.session_state:
     st.session_state.calculado = False
 
-# ============================================
-# LOGO
-# ============================================
 PASTA_APP = Path(__file__).parent
-CAMINHO_LOGO = PASTA_APP / "mat.jpg"
+CAMINHO_LOGO = PASTA_APP / "image.png"
 
 if CAMINHO_LOGO.exists():
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -89,18 +77,12 @@ if CAMINHO_LOGO.exists():
 else:
     st.warning("A imagem mat.jpg não foi encontrada.")
 
-# ============================================
-# TÍTULO
-# ============================================
-st.title("📈 Equação do 1º Grau")
+st.title("Equação do 1º Grau")
 
 st.write("Equação no formato:")
 
 st.latex(r"ax + b = 0")
 
-# ============================================
-# ENTRADA DOS VALORES
-# ============================================
 a = st.number_input(
     "Digite o valor de a",
     value=1,
@@ -116,7 +98,7 @@ b = st.number_input(
 # ============================================
 # BOTÃO CALCULAR
 # ============================================
-if st.button("🧮 Calcular", use_container_width=True):
+if st.button("Calcular", use_container_width=True):
     st.session_state.calculado = True
 
 # ============================================
@@ -129,11 +111,11 @@ if st.session_state.calculado:
 
         if b == 0:
             st.warning(
-                "⚠️ A equação possui infinitas soluções."
+                "A equação possui infinitas soluções."
             )
         else:
             st.error(
-                "❌ A equação não possui solução."
+                "A equação não possui solução."
             )
 
     # Caso normal
@@ -144,7 +126,7 @@ if st.session_state.calculado:
         # ====================================
         # RESULTADO
         # ====================================
-        st.subheader("🎯 Resultado")
+        st.subheader("Resultado")
 
         st.write("A raiz da equação é:")
 
@@ -153,7 +135,7 @@ if st.session_state.calculado:
         # ====================================
         # EQUAÇÃO
         # ====================================
-        st.subheader("📐 Equação")
+        st.subheader("Equação")
 
         if b >= 0:
             st.latex(f"{a}x + {b} = 0")
@@ -163,7 +145,7 @@ if st.session_state.calculado:
         # ====================================
         # RESOLUÇÃO
         # ====================================
-        st.subheader("📝 Resolução")
+        st.subheader("Resolução")
 
         if b >= 0:
             st.latex(f"{a}x + {b} = 0")
@@ -180,7 +162,7 @@ if st.session_state.calculado:
         # ====================================
         # GRÁFICO
         # ====================================
-        st.subheader("📊 Gráfico da função")
+        st.subheader("Gráfico da função")
 
         x = np.linspace(
             x_raiz - 10,
@@ -194,11 +176,9 @@ if st.session_state.calculado:
             figsize=(8, 5)
         )
 
-        # Fundo do gráfico
         fig.patch.set_facecolor("#ffd6e7")
         ax.set_facecolor("#fff0f6")
 
-        # Linha da função
         ax.plot(
             x,
             y,
@@ -207,7 +187,6 @@ if st.session_state.calculado:
             label=f"y = {a}x + {b}"
         )
 
-        # Eixos
         ax.axhline(
             y=0,
             color="black",
@@ -220,7 +199,6 @@ if st.session_state.calculado:
             linewidth=1
         )
 
-        # Marca a raiz
         ax.scatter(
             [x_raiz],
             [0],
@@ -230,7 +208,6 @@ if st.session_state.calculado:
             label=f"Raiz x = {x_raiz:.2f}"
         )
 
-        # Configuração do gráfico
         ax.set_xlabel("Eixo X")
         ax.set_ylabel("Eixo Y")
         ax.set_title(
@@ -240,17 +217,13 @@ if st.session_state.calculado:
         ax.grid(True, alpha=0.3)
         ax.legend()
 
-        # Mostra o gráfico
         st.pyplot(fig)
 
         plt.close(fig)
 
-# ============================================
-# RODAPÉ
-# ============================================
 st.divider()
 
 st.caption(
-    "📚 Calculadora de Equação do 1º Grau"
+    "Calculadora de Equação do 1º Grau"
 )
 
