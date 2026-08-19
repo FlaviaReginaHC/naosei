@@ -50,7 +50,7 @@ st.markdown("""
 
     .stButton > button:hover {
         background-color: #6C3483;
-        color: white;
+        color: #fafafa;
     }
 
     /* Caixa de resultado */
