@@ -41,7 +41,7 @@ st.markdown("""
     /* Botão */
     .stButton > button {
         background-color: #8E44AD;
-        color: white;
+        color: #FAFAFA;
         border: none;
         border-radius: 10px;
         font-size: 18px;
@@ -50,7 +50,7 @@ st.markdown("""
 
     .stButton > button:hover {
         background-color: #6C3483;
-        color: #fafafa;
+        color: #FAFAFA;
     }
 
     /* Caixa de resultado */
