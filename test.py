@@ -38,7 +38,6 @@ st.markdown("""
         color: white;
         border: none;
         border-radius: 10px;
-	@@ -49,7 +49,7 @@
     }
     .stButton > button:hover {
         background-color: #6C3483;
