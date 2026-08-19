@@ -11,126 +11,40 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-
-    /* ============================= */
-    /* FUNDO PRINCIPAL */
-    /* ============================= */
-
+    /* Fundo principal */
     .stApp {
         background-color: #D8B4E2;
     }
-
+    /* Área principal */
     .main {
         background-color: #D8B4E2;
     }
-
-    /* ============================= */
-    /* TÍTULOS */
-    /* ============================= */
-
-    h1, h2, h3, h4, h5, h6 {
-        color: #FFFFFF !important;
+    /* Título */
+    h1 {
+        color: #FFFFFF;
+        text-align: center;
     }
-
-    /* ============================= */
-    /* TEXTOS */
-    /* ============================= */
-
-    p, label, span {
+    /* Subtítulos */
+    h2, h3 {
         color: #FFFFFF;
     }
-
-    /* Texto dos captions */
-    .stCaption {
-        color: #FFFFFF !important;
+    /* Texto */
+    p, label {
+        color: #FFFFFF;
     }
-
-    /* ============================= */
-    /* INPUTS */
-    /* ============================= */
-
-    .stNumberInput label {
-        color: #FFFFFF !important;
-        font-weight: bold;
-    }
-
-    .stNumberInput input {
-        color: #FFFFFF !important;
-        background-color: #B57AC4 !important;
-        border: 2px solid #FFFFFF !important;
-        border-radius: 8px;
-    }
-
-    /* Placeholder */
-    .stNumberInput input::placeholder {
-        color: #F5EAF7 !important;
-    }
-
-    /* Botões de aumentar/diminuir */
-    .stNumberInput button {
-        background-color: #8E44AD !important;
-        color: #FFFFFF !important;
-        border: none !important;
-    }
-
-    .stNumberInput button:hover {
-        background-color: #6C3483 !important;
-    }
-
-    /* ============================= */
-    /* BOTÃO CALCULAR */
-    /* ============================= */
-
+    /* Botão */
     .stButton > button {
-        background-color: #8E44AD !important;
-        color: #FFFFFF !important;
-        border: 2px solid #FFFFFF !important;
+        background-color: #8E44AD;
+        color: white;
+        border: none;
         border-radius: 10px;
-        font-size: 18px;
-        font-weight: bold;
+	@@ -49,7 +49,7 @@
     }
-
-    .stButton > button p {
-        color: #FFFFFF !important;
-    }
-
     .stButton > button:hover {
-        background-color: #6C3483 !important;
-        color: #FFFFFF !important;
-        border-color: #FFFFFF !important;
+        background-color: #6C3483;
+        color: white;
     }
-
-    /* ============================= */
-    /* ALERTAS / RESULTADOS */
-    /* ============================= */
-
-    .stAlert {
-        border-radius: 10px;
-    }
-
-    .stAlert p,
-    .stAlert span,
-    .stAlert div {
-        color: #FFFFFF !important;
-    }
-
-    /* ============================= */
-    /* DIVISOR */
-    /* ============================= */
-
-    hr {
-        border-color: #FFFFFF !important;
-    }
-
-    /* ============================= */
-    /* LATEX */
-    /* ============================= */
-
-    .stLatex {
-        color: #FFFFFF !important;
-    }
-
-</style>
+    <style>
 """, unsafe_allow_html=True)
 
 
