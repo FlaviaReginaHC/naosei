@@ -12,35 +12,35 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    /* Fundo principal (Salmão claro e suave) */
+    /* Fundo principal (Salmão claro alaranjado) */
     .stApp {
-        background-color: #fce3db;
+        background-color: #fce8df;
     }
 
-    /* Área principal (Branco suave com toque salmão) */
+    /* Área principal (Off-white bem quente) */
     .main {
-        background-color: #fffaf8;
+        background-color: #fffbfa;
     }
 
-    /* Título (Salmão escuro / Coral fechado) */
+    /* Título (Tangerina escuro / Terracota) */
     h1 {
-        color: #c44d32;
+        color: #ca4d1e;
         text-align: center;
     }
 
-    /* Subtítulos (Salmão médio escuro) */
+    /* Subtítulos (Laranja queimado) */
     h2, h3 {
-        color: #d15f47;
+        color: #d96232;
     }
 
-    /* Texto (Marrom escuro quente para contraste) */
+    /* Texto (Marrom escuro profundo para contraste perfeito) */
     p, label {
-        color: #3b1e18;
+        color: #3b1c10;
     }
 
-    /* Botão (Salmão vibrante / Terracota) */
+    /* Botão (Laranja salmão vibrante) */
     .stButton > button {
-        background-color: #e0674c;
+        background-color: #f2723a;
         color: white;
         border: none;
         border-radius: 10px;
@@ -49,9 +49,9 @@ st.markdown("""
         transition: background-color 0.3s ease;
     }
 
-    /* Efeito Hover do botão (Tom mais escuro) */
+    /* Efeito Hover do botão (Tom mais fechado e robusto) */
     .stButton > button:hover {
-        background-color: #b84c34;
+        background-color: #c55320;
         color: white;
     }
 
