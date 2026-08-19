@@ -36,7 +36,7 @@ st.markdown("""
     /* TEXTOS */
     /* ============================= */
 
-    p, label, span, div {
+    p, label, span {
         color: #FFFFFF;
     }
 
