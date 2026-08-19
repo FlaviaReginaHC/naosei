@@ -3,22 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 
-#[theme]
-#base = "light"
-#background = "#f58e62"
-#textColor = "fafafa"
-
 st.set_page_config(
     page_title="Equação do 1º Grau", page_icon="📈", layout="centered")
-
-
-st.markdown("""
-    <style>
-        body {
-            background-color: #f58e62;
-        }
-    </style>""", unsafe_allow_html=True)
-
 
 if "calculado" not in st.session_state:
   st.session_state.calculado = False
@@ -77,31 +63,26 @@ if st.session_state.calculado:
         x = np.linspace(
             x_raiz - 10,
             x_raiz + 10,
-            500
-        )
+            500)
 
         y = a * x + b
 
         fig, ax = plt.subplots(
-            figsize=(8, 5)
-        )
+            figsize=(8, 5))
 
         ax.plot(
             x,
             y,
             linewidth=2,
-            label=f"y = {a}x + {b}"
-        )
+            label=f"y = {a}x + {b}")
 
         ax.axhline(
             y=0,
-            linewidth=1
-        )
+            linewidth=1)
 
         ax.axvline(
             x=0,
-            linewidth=1
-        )
+            linewidth=1)
 
         ax.scatter(
             [x_raiz],
@@ -115,12 +96,11 @@ if st.session_state.calculado:
         # CONFIGURAÇÃO DO GRÁFICO
         # ====================================
 
-        ax.set_xlabel("x")
-        ax.set_ylabel("y")
+        ax.set_xlabel("Eixo X")
+        ax.set_ylabel("Eixo Y")
 
         ax.set_title(
-            "Gráfico da Função do 1º Grau"
-        )
+            "Gráfico da Função do 1º Grau")
 
         ax.grid(True)
 
