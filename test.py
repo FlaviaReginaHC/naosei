@@ -6,6 +6,17 @@ import streamlit as st
 st.set_page_config(
     page_title="Equação do 1º Grau", page_icon="📈", layout="centered")
 
+st.markdown("""
+    <style>
+        body {
+            background-color: #FF1493;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            padding: 10px 24px;
+        }
+    </style>""", unsafe_allow_html=True)
+
 if "calculado" not in st.session_state:
   st.session_state.calculado = False
 
