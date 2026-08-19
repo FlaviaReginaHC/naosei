@@ -75,7 +75,7 @@ if CAMINHO_LOGO.exists():
             use_container_width=True
         )
 else:
-    st.warning("A imagem mat.jpg não foi encontrada.")
+    st.warning("A imagem image.png não foi encontrada.")
 
 st.title("Equação do 1º Grau")
 
@@ -95,18 +95,11 @@ b = st.number_input(
     step=1
 )
 
-# ============================================
-# BOTÃO CALCULAR
-# ============================================
 if st.button("Calcular", use_container_width=True):
     st.session_state.calculado = True
 
-# ============================================
-# CÁLCULO
-# ============================================
 if st.session_state.calculado:
 
-    # Caso a = 0
     if a == 0:
 
         if b == 0:
@@ -118,23 +111,16 @@ if st.session_state.calculado:
                 "A equação não possui solução."
             )
 
-    # Caso normal
     else:
 
         x_raiz = -b / a
 
-        # ====================================
-        # RESULTADO
-        # ====================================
         st.subheader("Resultado")
 
         st.write("A raiz da equação é:")
 
         st.success(f"x = {x_raiz:.2f}")
 
-        # ====================================
-        # EQUAÇÃO
-        # ====================================
         st.subheader("Equação")
 
         if b >= 0:
@@ -142,9 +128,6 @@ if st.session_state.calculado:
         else:
             st.latex(f"{a}x - {abs(b)} = 0")
 
-        # ====================================
-        # RESOLUÇÃO
-        # ====================================
         st.subheader("Resolução")
 
         if b >= 0:
@@ -159,9 +142,6 @@ if st.session_state.calculado:
             st.latex(f"x = \\frac{{{-b}}}{{{a}}}")
             st.latex(f"x = {x_raiz:.2f}")
 
-        # ====================================
-        # GRÁFICO
-        # ====================================
         st.subheader("Gráfico da função")
 
         x = np.linspace(
