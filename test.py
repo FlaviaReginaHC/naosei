@@ -12,46 +12,44 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    /* Fundo principal (Salmão claro alaranjado) */
+    /* Fundo principal */
     .stApp {
-        background-color: #fce8df;
+        background-color: #ffd6e7;
     }
 
-    /* Área principal (Off-white bem quente) */
+    /* Área principal */
     .main {
-        background-color: #fffbfa;
+        background-color: #ffd6e7;
     }
 
-    /* Título (Tangerina escuro / Terracota) */
+    /* Título */
     h1 {
-        color: #ca4d1e;
+        color: #c2185b;
         text-align: center;
     }
 
-    /* Subtítulos (Laranja queimado) */
+    /* Subtítulos */
     h2, h3 {
-        color: #d96232;
+        color: #ad1457;
     }
 
-    /* Texto (Marrom escuro profundo para contraste perfeito) */
+    /* Texto */
     p, label {
-        color: #3b1c10;
+        color: #4a1630;
     }
 
-    /* Botão (Laranja salmão vibrante) */
+    /* Botão */
     .stButton > button {
-        background-color: #f2723a;
+        background-color: #e91e63;
         color: white;
         border: none;
         border-radius: 10px;
         font-size: 18px;
         font-weight: bold;
-        transition: background-color 0.3s ease;
     }
 
-    /* Efeito Hover do botão (Tom mais fechado e robusto) */
     .stButton > button:hover {
-        background-color: #c55320;
+        background-color: #c2185b;
         color: white;
     }
 
