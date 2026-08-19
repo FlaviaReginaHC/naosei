@@ -14,33 +14,33 @@ st.markdown("""
 <style>
     /* Fundo principal */
     .stApp {
-        background-color: #ffd6e7;
+        background-color: #D8B4E2;
     }
 
     /* Área principal */
     .main {
-        background-color: #ffd6e7;
+        background-color: #D8B4E2;
     }
 
     /* Título */
     h1 {
-        color: #c2185b;
+        color: #FFFFFF;
         text-align: center;
     }
 
     /* Subtítulos */
     h2, h3 {
-        color: #ad1457;
+        color: #FFFFFF;
     }
 
     /* Texto */
     p, label {
-        color: #4a1630;
+        color: #FFFFFF;
     }
 
     /* Botão */
     .stButton > button {
-        background-color: #e91e63;
+        background-color: #8E44AD;
         color: white;
         border: none;
         border-radius: 10px;
@@ -49,7 +49,7 @@ st.markdown("""
     }
 
     .stButton > button:hover {
-        background-color: #c2185b;
+        background-color: #6C3483;
         color: white;
     }
 
