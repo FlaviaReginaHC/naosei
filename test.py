@@ -71,7 +71,7 @@ else:
 
 
 # Título
-st.title("Áexis")
+st.title("Áexis Centro de Estudos")
 
 st.write("Equação do segundo grau no formato:")
 
