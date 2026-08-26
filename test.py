@@ -71,7 +71,7 @@ else:
 
 
 # Título
-st.title("Instituto de Matemática Pitagórica")
+st.title("Áexis")
 
 st.write("Equação do segundo grau no formato:")
 
