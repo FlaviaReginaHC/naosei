@@ -47,16 +47,18 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+# Controla se o cálculo foi realizado
 if "calculado" not in st.session_state:
     st.session_state.calculado = False
 
 
+# Caminho da imagem
 PASTA_APP = Path(__file__).parent
-CAMINHO_LOGO = PASTA_APP / "image.png"
+CAMINHO_LOGO = PASTA_APP / "mat.jpg"
 
 
+# Logo
 if CAMINHO_LOGO.exists():
-
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col2:
@@ -64,26 +66,24 @@ if CAMINHO_LOGO.exists():
             str(CAMINHO_LOGO),
             use_container_width=True
         )
-
 else:
-    st.warning(
-        "A imagem image.png não foi encontrada."
-    )
+    st.warning("A imagem mat.jpg não foi encontrada.")
 
 
-st.title("Equação do 1º Grau")
+# Título
+st.title("Instituto de Matemática Pitagórica")
 
-st.write("Equação no formato:")
+st.write("Equação do segundo grau no formato:")
 
-st.latex(r"ax + b = 0")
+st.latex(r"ax^2 + bx + c = 0")
 
 
+# Coeficientes
 a = st.number_input(
     "Digite o valor de a",
     value=1,
     step=1
 )
-
 
 b = st.number_input(
     "Digite o valor de b",
@@ -91,194 +91,318 @@ b = st.number_input(
     step=1
 )
 
+c = st.number_input(
+    "Digite o valor de c",
+    value=0,
+    step=1
+)
 
-if st.button(
-    "Calcular",
-    use_container_width=True
-):
+
+# Botão
+if st.button("Calcular", use_container_width=True):
     st.session_state.calculado = True
 
 
+# =========================
+# CÁLCULO
+# =========================
+
 if st.session_state.calculado:
 
+    # Verifica se é realmente segundo grau
     if a == 0:
 
-        if b == 0:
-
-            st.warning(
-                "A equação possui infinitas soluções."
-            )
-
-        else:
-
-            st.error(
-                "A equação não possui solução."
-            )
+        st.error(
+            "O valor de 'a' não pode ser 0 em uma equação do segundo grau."
+        )
 
     else:
 
-        x_raiz = -b / a
+        # Calcula o Delta
+        delta = b**2 - 4*a*c
 
-        st.subheader("Resultado")
+        st.subheader("📐 Delta")
 
-        st.write(
-            "A raiz da equação é:"
+        st.latex(r"\Delta = b^2 - 4ac")
+
+        st.latex(
+            rf"\Delta = ({b})^2 - 4({a})({c}) = {delta}"
         )
 
-        st.success(
-            f"x = {x_raiz:.2f}"
-        )
 
-        st.subheader("Equação")
+        # =========================
+        # EQUAÇÃO
+        # =========================
 
-        if b >= 0:
+        st.subheader("📝 Equação")
+
+        if b >= 0 and c >= 0:
 
             st.latex(
-                f"{a}x + {b} = 0"
+                rf"{a}x^2 + {b}x + {c} = 0"
+            )
+
+        elif b >= 0 and c < 0:
+
+            st.latex(
+                rf"{a}x^2 + {b}x - {abs(c)} = 0"
+            )
+
+        elif b < 0 and c >= 0:
+
+            st.latex(
+                rf"{a}x^2 - {abs(b)}x + {c} = 0"
             )
 
         else:
 
             st.latex(
-                f"{a}x - {abs(b)} = 0"
+                rf"{a}x^2 - {abs(b)}x - {abs(c)} = 0"
             )
 
-        st.subheader("Resolução")
 
-        if b >= 0:
+        # =========================
+        # DELTA NEGATIVO
+        # =========================
+
+        if delta < 0:
+
+            st.warning(
+                "A equação não possui raízes reais, pois Δ < 0."
+            )
+
+            st.write(f"Δ = {delta}")
+
+
+        # =========================
+        # DELTA IGUAL A ZERO
+        # =========================
+
+        elif delta == 0:
+
+            x1 = -b / (2 * a)
+
+            st.success(
+                "A equação possui uma única raiz real."
+            )
+
+            st.subheader("🎯 Resultado")
+
+            st.success(
+                f"x = {x1:.2f}"
+            )
+
+            st.subheader("📚 Resolução")
 
             st.latex(
-                f"{a}x + {b} = 0"
+                r"x = \frac{-b \pm \sqrt{\Delta}}{2a}"
             )
 
             st.latex(
-                f"{a}x = {-b}"
+                rf"x = \frac{{-({b})}}{{2({a})}}"
             )
 
             st.latex(
-                f"x = \\frac{{{-b}}}{{{a}}}"
+                rf"x = {x1:.2f}"
             )
 
-            st.latex(
-                f"x = {x_raiz:.2f}"
-            )
+
+        # =========================
+        # DELTA POSITIVO
+        # =========================
 
         else:
 
+            x1 = (-b + np.sqrt(delta)) / (2 * a)
+
+            x2 = (-b - np.sqrt(delta)) / (2 * a)
+
+            st.success(
+                "A equação possui duas raízes reais."
+            )
+
+            st.subheader("🎯 Resultado")
+
+            col1, col2 = st.columns(2)
+
+            with col1:
+
+                st.write("Primeira raiz:")
+
+                st.success(
+                    f"x₁ = {x1:.2f}"
+                )
+
+            with col2:
+
+                st.write("Segunda raiz:")
+
+                st.success(
+                    f"x₂ = {x2:.2f}"
+                )
+
+
+            st.subheader("📚 Resolução")
+
             st.latex(
-                f"{a}x - {abs(b)} = 0"
+                r"x = \frac{-b \pm \sqrt{\Delta}}{2a}"
             )
 
             st.latex(
-                f"{a}x = {-b}"
+                rf"x_1 = \frac{{-({b}) + \sqrt{{{delta}}}}}{{2({a})}}"
             )
 
             st.latex(
-                f"x = \\frac{{{-b}}}{{{a}}}"
+                rf"x_1 = {x1:.2f}"
             )
 
             st.latex(
-                f"x = {x_raiz:.2f}"
+                rf"x_2 = \frac{{-({b}) - \sqrt{{{delta}}}}}{{2({a})}}"
             )
 
-        st.subheader("Gráfico da função")
+            st.latex(
+                rf"x_2 = {x2:.2f}"
+            )
 
+
+        # =========================
+        # GRÁFICO
+        # =========================
+
+        st.subheader("📊 Gráfico da função")
+
+
+        # Vértice
+        xv = -b / (2 * a)
+
+        yv = a * xv**2 + b * xv + c
+
+
+        # Define o intervalo do gráfico
+        if delta > 0:
+
+            menor_x = min(x1, x2)
+
+            maior_x = max(x1, x2)
+
+            margem = max(
+                5,
+                abs(maior_x - menor_x)
+            )
+
+            inicio = menor_x - margem
+
+            fim = maior_x + margem
+
+        else:
+
+            # Quando não existem duas raízes,
+            # usamos o vértice como centro
+            inicio = xv - 10
+
+            fim = xv + 10
+
+
+        # Valores de X
         x = np.linspace(
-            x_raiz - 10,
-            x_raiz + 10,
+            inicio,
+            fim,
             500
         )
 
-        y = a * x + b
 
+        # Função quadrática
+        y = a * x**2 + b * x + c
+
+
+        # Cria o gráfico
         fig, ax = plt.subplots(
             figsize=(8, 5)
         )
 
-        # Fundo do gráfico
-        fig.patch.set_facecolor("#D8B4E2")
-        ax.set_facecolor("#E8D5EC")
 
-        # Linha da função
+        # Parábola
         ax.plot(
             x,
             y,
-            color="#6C3483",
-            linewidth=3,
-            label=f"y = {a}x + {b}"
+            color="#e91e63",
+            linewidth=2.5,
+            label=f"y = {a}x² + {b}x + {c}"
         )
 
-        # Eixos
+
+        # Eixo X
         ax.axhline(
             y=0,
-            color="#FFFFFF",
-            linewidth=1.5
+            color="black",
+            linewidth=1
         )
 
+
+        # Eixo Y
         ax.axvline(
             x=0,
-            color="#FFFFFF",
-            linewidth=1.5
+            color="black",
+            linewidth=1
         )
 
-        # Raiz
+
+        # =========================
+        # MARCA AS RAÍZES
+        # =========================
+
+        if delta > 0:
+
+            ax.scatter(
+                [x1, x2],
+                [0, 0],
+                color="red",
+                s=100,
+                zorder=5,
+                label="Raízes"
+            )
+
+        elif delta == 0:
+
+            ax.scatter(
+                [x1],
+                [0],
+                color="red",
+                s=100,
+                zorder=5,
+                label="Raiz"
+            )
+
+
+        # =========================
+        # MARCA O VÉRTICE
+        # =========================
+
         ax.scatter(
-            [x_raiz],
-            [0],
-            color="#FFFFFF",
-            edgecolors="#6C3483",
-            linewidths=2,
-            s=100,
+            [xv],
+            [yv],
+            color="blue",
+            s=80,
             zorder=5,
-            label=f"Raiz x = {x_raiz:.2f}"
+            label=f"Vértice ({xv:.2f}, {yv:.2f})"
         )
 
-        # Textos do gráfico
-        ax.set_xlabel(
-            "Eixo X",
-            color="#FFFFFF"
-        )
 
-        ax.set_ylabel(
-            "Eixo Y",
-            color="#FFFFFF"
-        )
+        # Configurações
+        ax.set_xlabel("Eixo X")
+
+        ax.set_ylabel("Eixo Y")
 
         ax.set_title(
-            "Gráfico da Função do 1º Grau",
-            color="#FFFFFF"
+            "Gráfico da Função do 2º Grau"
         )
 
-        # Números dos eixos
-        ax.tick_params(
-            colors="#FFFFFF"
-        )
+        ax.grid(True)
 
-        # Bordas
-        for spine in ax.spines.values():
-            spine.set_color("#FFFFFF")
+        ax.legend()
 
-        # Grade
-        ax.grid(
-            True,
-            color="#FFFFFF",
-            alpha=0.25
-        )
 
-        # Legenda
-        legend = ax.legend()
-
-        legend.get_frame().set_facecolor(
-            "#8E44AD"
-        )
-
-        legend.get_frame().set_edgecolor(
-            "#FFFFFF"
-        )
-
-        for text in legend.get_texts():
-            text.set_color("#FFFFFF")
-
+        # Mostra gráfico no Streamlit
         st.pyplot(fig)
 
         plt.close(fig)
@@ -287,5 +411,6 @@ if st.session_state.calculado:
 st.divider()
 
 st.caption(
-    "Calculadora de Equação do 1º Grau"
+    "📚 Calculadora de Equação do 2º Grau"
 )
+
