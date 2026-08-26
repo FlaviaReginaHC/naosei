@@ -54,7 +54,7 @@ if "calculado" not in st.session_state:
 
 # Caminho da imagem
 PASTA_APP = Path(__file__).parent
-CAMINHO_LOGO = PASTA_APP / ""
+CAMINHO_LOGO = PASTA_APP / "file_00000000a244820e9e92d18380ebf91b.png"
 
 
 # Logo
