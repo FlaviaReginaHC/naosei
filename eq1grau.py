@@ -142,10 +142,10 @@ if st.session_state.calculado:
     if b >= 0:
       st.latex(f"{a}x + {b} = 0")
     else:
-      st.latex(f"{a}x - {abs(b)} = 0")
-    st.latex(f"{a}x = {-b}")
-    st.latex(f"x = \\frac{{{-b}}}{{{a}}}")
-    st.latex(f"x = {x_raiz:.2f}")
+        st.latex(f"{a}x - {abs(b)} = 0")
+        st.latex(f"{a}x = {-b}")
+        st.latex(f"x = \\frac{{{-b}}}{{{a}}}")
+        st.latex(f"x = {x_raiz:.2f}")
 
     st.subheader("Gráfico da função")
 
