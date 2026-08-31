@@ -4,7 +4,7 @@ import numpy as np
 import streamlit as st
 
 st.set_page_config(
-    page_title="Equação do 1º Grau",
+    page_title="Equação do 2º Grau",
     page_icon="📈",
     layout="centered"
 )
