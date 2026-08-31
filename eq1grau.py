@@ -6,6 +6,96 @@ import streamlit as st
 st.set_page_config(
     page_title="Equação do 1º Grau", page_icon="📈", layout="centered")
 
+st.markdown("""
+<style>
+    /* Fundo principal */
+    .stApp {
+        background: linear-gradient(
+            135deg,
+            #f3e8ff 0%,
+            #e9d5ff 50%,
+            #ddd6fe 100%
+        );
+    }
+
+    /* Área central do conteúdo */
+    .main .block-container {
+        background-color: rgba(255, 255, 255, 0.75);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(91, 33, 182, 0.15);
+    }
+
+    /* Título */
+    h1 {
+        color: #6b21a8 !important;
+        text-align: center;
+    }
+
+    /* Subtítulos */
+    h2, h3 {
+        color: #7e22ce !important;
+    }
+
+    /* Textos */
+    p, label {
+        color: #4c1d95 !important;
+    }
+
+    /* Campos de entrada */
+    div[data-baseweb="input"] {
+        border: 2px solid #c084fc;
+        border-radius: 10px;
+        background-color: #faf5ff;
+    }
+
+    div[data-baseweb="input"]:focus-within {
+        border-color: #9333ea;
+        box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.15);
+    }
+
+    /* Botão */
+    .stButton > button {
+        background: linear-gradient(
+            90deg,
+            #9333ea,
+            #7e22ce
+        );
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-weight: bold;
+        padding: 0.6rem 1rem;
+        transition: 0.3s;
+    }
+
+    .stButton > button:hover {
+        background: linear-gradient(
+            90deg,
+            #7e22ce,
+            #6b21a8
+        );
+        transform: scale(1.02);
+    }
+
+    /* Resultado */
+    div[data-testid="stAlert"] {
+        border-radius: 12px;
+    }
+
+    /* Linha divisória */
+    hr {
+        border-color: #c084fc;
+    }
+
+    /* Rodapé */
+    .stCaption {
+        color: #6b21a8 !important;
+        text-align: center;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 if "calculado" not in st.session_state:
   st.session_state.calculado = False
 
