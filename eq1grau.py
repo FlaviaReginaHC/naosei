@@ -100,7 +100,7 @@ if "calculado" not in st.session_state:
   st.session_state.calculado = False
 
 PASTA_APP = Path(__file__).parent
-CAMINHO_LOGO = PASTA_APP / "mat.jpg"
+CAMINHO_LOGO = PASTA_APP / "flavia.png"
 
 if CAMINHO_LOGO.exists():
   col1, col2, col3 = st.columns([1, 2, 1])
