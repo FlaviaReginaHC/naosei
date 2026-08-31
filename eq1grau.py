@@ -149,7 +149,7 @@ if st.session_state.calculado:
 
     st.subheader("📊 Gráfico da função")
 
-x = np.linspace(x_raiz - 10, x_raiz + 10, 500)
+    x = np.linspace(x_raiz - 10, x_raiz + 10, 500)
 
 y = a * x + b
 
