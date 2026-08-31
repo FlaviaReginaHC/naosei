@@ -147,35 +147,35 @@ if st.session_state.calculado:
         st.latex(f"x = \\frac{{{-b}}}{{{a}}}")
         st.latex(f"x = {x_raiz:.2f}")
 
-    st.subheader("📊 Gráfico da função")
+  st.subheader("📊 Gráfico da função")
 
 # Cria intervalo para o gráfico
-x = np.linspace(x_raiz - 10, x_raiz + 10, 500)
+  x = np.linspace(x_raiz - 10, x_raiz + 10, 500)
 
 # Função do primeiro grau
-y = a * x + b
+  y = a * x + b
 
 # Cria gráfico
-fig, ax = plt.subplots(figsize=(8, 5))
+  fig, ax = plt.subplots(figsize=(8, 5))
 
 # Desenha a reta
-ax.plot(x, y, linewidth=2, label=f"y = {a}x + {b}")
+  ax.plot(x, y, linewidth=2, label=f"y = {a}x + {b}")
 
 # Eixo X e Eixo Y
-ax.axhline(y=0, color='black', linewidth=1)
-ax.axvline(x=0, color='black', linewidth=1)
+  ax.axhline(y=0, color='black', linewidth=1)
+  ax.axvline(x=0, color='black', linewidth=1)
 
 # Marca a raiz
-ax.scatter([x_raiz], [0], color='red', s=100, zorder=5, label=f"Raiz x = {x_raiz:.2f}")
+  ax.scatter([x_raiz], [0], color='red', s=100, zorder=5, label=f"Raiz x = {x_raiz:.2f}")
 
-ax.set_xlabel("Eixo X")  # Corrigido para string
-ax.set_ylabel("Eixo Y")  # Corrigido para string
-ax.set_title("Gráfico da Função do 1º Grau")
-ax.grid(True)
-ax.legend()
+  ax.set_xlabel("Eixo X")  # Corrigido para string
+  ax.set_ylabel("Eixo Y")  # Corrigido para string
+  ax.set_title("Gráfico da Função do 1º Grau")
+  ax.grid(True)
+  ax.legend()
 
-st.pyplot(fig)
-plt.close(fig)
+  st.pyplot(fig)
+  plt.close(fig)
 
 st.divider()
 st.caption("📚 Calculadora de Equação do 1º Grau")
